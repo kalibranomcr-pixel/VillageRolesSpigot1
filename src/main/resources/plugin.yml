@@ -1,0 +1,14 @@
+name: VillageRolesSpigot
+version: 0.2.0-spigot1
+main: de.openai.villageroles.VillageRolesPaper
+api-version: '26.2'
+author: OpenAI port based on Village Roles by Lilyan (MIT)
+description: Server-side Bukkit/Spigot adaptation of Village Roles for Minecraft 26.2.
+commands:
+  vrole:
+    description: Assign a Village Roles job to the nearest villager.
+    usage: /vrole <role>
+    permission: villageroles.admin
+permissions:
+  villageroles.admin:
+    default: op

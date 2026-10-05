@@ -1,0 +1,57 @@
+village-radius: 64.0
+village-starting-stock: 64
+village-produce-interval: 1200
+village-produce-amount: 8
+village-stock-cap: 128
+police-sight-radius: 16.0
+police-max-chase: 28.0
+police-damage: 4.0
+police-attack-cooldown: 20
+builder-site-search-radius: 64.0
+builder-place-interval: 40
+builder-carry-capacity: 6
+builder-scaffolding: true
+builder-scaffold-after-ticks: 100
+builder-max-scaffold: 24
+builder-scaffold-block: DIRT
+repair-village-damage: true
+max-repair-blocks-per-event: 64
+scout-scan-interval: 80
+scout-place-interval: 60
+scout-radius: 40.0
+scout-torches-per-trip: 8
+scout-max-torches-per-night: 24
+breeder-radius: 32.0
+breeder-herd-interval: 60
+breeder-breed-interval: 2400
+breeder-max-per-species: 10
+breeder-feed-per-trip: 4
+explorer-min-distance: 48.0
+explorer-max-distance: 128.0
+explorer-rations: 5
+explorer-supply-cost: 6
+explorer-stock-per-find: 3
+shopkeeper-stock-per-day: 6
+doctor-resurrection: true
+doctor-revive-interval: 400
+doctor-revivals-per-morning: 3
+doctor-revival-cost: 24
+doctor-healing: true
+doctor-heal-interval: 200
+doctor-heal-amount: 6.0
+doctor-heal-cost: 2
+doctor-max-graves: 12
+mayor-commissions-buildings: true
+building-commission-cost: 32
+mayor-census-interval: 300
+quotas:
+  POLICE: 5
+  BUILDER: 1
+  NIGHT_SCOUT: 1
+  BREEDER: 1
+  EXPLORER: 1
+  MAYOR: 1
+  DOCTOR: 1
+  SHOPKEEPER: 1
+village-key-size: 64
+police-patrol-interval: 100

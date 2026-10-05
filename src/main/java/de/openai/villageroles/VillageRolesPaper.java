@@ -38,7 +38,7 @@ public final class VillageRolesPaper extends JavaPlugin implements Listener, Com
   private void capture(List<Block> blocks){
     if(!getConfig().getBoolean("repair-village-damage",true))return;
     int n=0,max=getConfig().getInt("max-repair-blocks-per-event",64);
-    for(Block b:blocks){if(n++>=max)break;if(!b.getType().isAir())repairs.add(new Repair(b.getWorld().getUID(),b.getX(),b.getY(),b.getZ(),b.getBlockData().getAsString()));}
+    for(Block b:blocks){if(n++>=max)break;if(!b.getType().isAir()&&!isProtectedTechnicalBlock(b.getType()))repairs.add(new Repair(b.getWorld().getUID(),b.getX(),b.getY(),b.getZ(),b.getBlockData().getAsString()));}
   }
 
   private void tick(){
@@ -95,6 +95,19 @@ public final class VillageRolesPaper extends JavaPlugin implements Listener, Com
       try{Block b=w.getBlockAt(best.x(),best.y(),best.z()); if(b.getType().isAir())b.setBlockData(Bukkit.createBlockData(best.data()),false);}catch(Exception ignored){}
       repairs.remove(best);
     }
+  }
+
+  private boolean isProtectedTechnicalBlock(Material m){
+    String n=m.name();
+    return n.contains("REDSTONE")||n.contains("PISTON")||n.contains("RAIL")||
+      n.contains("CHEST")||n.contains("SHULKER")||n.contains("SPAWNER")||
+      n.contains("HOPPER")||n.contains("DROPPER")||n.contains("DISPENSER")||
+      n.contains("OBSERVER")||n.contains("REPEATER")||n.contains("COMPARATOR")||
+      n.contains("LEVER")||n.contains("BUTTON")||n.contains("PRESSURE_PLATE")||
+      n.contains("TRIPWIRE")||n.contains("DAYLIGHT_DETECTOR")||
+      n.contains("SCULK_SENSOR")||n.contains("CRAFTER")||n.contains("FURNACE")||
+      n.contains("SMOKER")||n.contains("BLAST_FURNACE")||n.contains("BARREL")||
+      n.contains("BEACON")||n.contains("END_PORTAL")||n.contains("COMMAND_BLOCK");
   }
 
   private void scout(Villager v){
